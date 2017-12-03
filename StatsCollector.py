@@ -11,9 +11,9 @@ class StatsCollector:
 
     # Define the Sofa function
     def sofa_steal(self):
-        html_soup = get(self.abs_adr).json()
+        json_reader = get(self.abs_adr).json()
         # Pull all the data about the requested league
-        teams = html_soup["standingsTables"][0]["tableRows"]
+        teams = json_reader["standingsTables"][0]["tableRows"]
         return teams
 
     # Define the function that will interact with Felix
