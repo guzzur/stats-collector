@@ -1,0 +1,12 @@
+<config>
+    <football>
+        <leagues>
+            <league url="https://www.sofascore.com/u-tournament/266/season/13491/json"/> <!-- israel 1st -->
+            <league url="https://www.sofascore.com/u-tournament/17/season/13380/json"/> <!-- england 1st -->
+            <league url="https://www.sofascore.com/u-tournament/8/season/13662/json"/> <!-- spain 1st -->
+            <league url="https://www.sofascore.com/u-tournament/23/season/13768/json"/> <!-- italian 1st -->
+            <league url="https://www.sofascore.com/u-tournament/35/season/13477/json"/> <!-- german 1st -->
+            <league url="https://www.sofascore.com/u-tournament/772/season/12916/json"/> <!-- uzbek 1st -->
+        </leagues>
+    </football>
+</config>
