@@ -23,8 +23,13 @@
       <file leaf-file-name="StatsCollector.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/StatsCollector.py">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="239">
               <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+=======
+            <state relative-caret-position="521">
+              <caret line="36" column="67" lean-forward="true" selection-start-line="36" selection-start-column="67" selection-end-line="36" selection-end-column="67" />
+>>>>>>> 90e3398059d1d4bfa6436eeccb536cfc32f4bf2a
               <folding>
                 <element signature="e#0#24#0" expanded="true" />
               </folding>
@@ -45,6 +50,7 @@
       <file leaf-file-name="Config.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Config.xml">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="30">
               <caret line="2" column="24" lean-forward="false" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
               <folding />
@@ -67,6 +73,10 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
+            <state relative-caret-position="264">
+              <caret line="8" column="111" lean-forward="false" selection-start-line="8" selection-start-column="111" selection-end-line="8" selection-end-column="111" />
+>>>>>>> 90e3398059d1d4bfa6436eeccb536cfc32f4bf2a
               <folding />
             </state>
           </provider>
@@ -75,8 +85,13 @@
       <file leaf-file-name="Manager.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Manager.py">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="30">
               <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+=======
+            <state relative-caret-position="363">
+              <caret line="21" column="64" lean-forward="true" selection-start-line="21" selection-start-column="64" selection-end-line="21" selection-end-column="64" />
+>>>>>>> 90e3398059d1d4bfa6436eeccb536cfc32f4bf2a
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -138,6 +153,10 @@
         <option value="$PROJECT_DIR$/CollectionParser.py" />
         <option value="$PROJECT_DIR$/ClassInClass.py" />
         <option value="$PROJECT_DIR$/ConfigManager.py" />
+<<<<<<< HEAD
+=======
+        <option value="$PROJECT_DIR$/StatsCollector.py" />
+>>>>>>> 90e3398059d1d4bfa6436eeccb536cfc32f4bf2a
         <option value="$PROJECT_DIR$/Config.xml" />
         <option value="$PROJECT_DIR$/Manager.py" />
         <option value="$PROJECT_DIR$/StatsCollector.py" />
@@ -409,7 +428,12 @@
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32933334" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+=======
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38892508" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+>>>>>>> 90e3398059d1d4bfa6436eeccb536cfc32f4bf2a
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38892508" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -442,8 +466,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Manager.py</url>
+<<<<<<< HEAD
           <line>28</line>
           <option name="timeStamp" value="17" />
+=======
+          <line>29</line>
+          <option name="timeStamp" value="19" />
+>>>>>>> 90e3398059d1d4bfa6436eeccb536cfc32f4bf2a
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -453,7 +482,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="18" />
+      <option name="time" value="20" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -783,6 +812,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/.gitattributes">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -792,9 +822,24 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
+=======
+    <entry file="file://$PROJECT_DIR$/getGroups.py" />
+    <entry file="file://$PROJECT_DIR$/ClassInClass.py" />
+    <entry file="file://$PROJECT_DIR$/StatsCollector.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="521">
+          <caret line="36" column="67" lean-forward="true" selection-start-line="36" selection-start-column="67" selection-end-line="36" selection-end-column="67" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ConfigManager.py">
+>>>>>>> 90e3398059d1d4bfa6436eeccb536cfc32f4bf2a
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="15" column="34" lean-forward="false" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
           <folding />
         </state>
       </provider>
@@ -809,12 +854,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Config.xml">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="30">
           <caret line="2" column="24" lean-forward="false" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+=======
+        <state relative-caret-position="264">
+          <caret line="8" column="111" lean-forward="false" selection-start-line="8" selection-start-column="111" selection-end-line="8" selection-end-column="111" />
+>>>>>>> 90e3398059d1d4bfa6436eeccb536cfc32f4bf2a
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/Manager.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -822,13 +873,25 @@
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
+=======
+    <entry file="file://$PROJECT_DIR$/CollectionParser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+>>>>>>> 90e3398059d1d4bfa6436eeccb536cfc32f4bf2a
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/StatsCollector.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="239">
           <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+=======
+        <state relative-caret-position="363">
+          <caret line="21" column="64" lean-forward="true" selection-start-line="21" selection-start-column="64" selection-end-line="21" selection-end-column="64" />
+>>>>>>> 90e3398059d1d4bfa6436eeccb536cfc32f4bf2a
           <folding>
             <element signature="e#0#24#0" expanded="true" />
           </folding>
