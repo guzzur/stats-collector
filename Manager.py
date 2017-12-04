@@ -26,5 +26,5 @@ if __name__ == "__main__":
             games = collector.get_games(league_start_time)
 
             for game in games["weekMatches"]["tournaments"][0]["events"]:
-                if ("She" in game.awayTeam.name or "She" in game.homeTeam.name) and ("Aviv" in game.awayTeam.name or "Aviv" in game.homeTeam.name):
-                    print game.homeTeam.name + " : " + game.awayTeam.name
+                if ("Sheva" in game["homeTeam"]["name"] or "She" in game["awayTeam"]["name"]) and ("Beitar" in game["homeTeam"]["name"] or "Beitar" in game["awayTeam"]["name"]):
+                    print game["homeTeam"]["name"] + " : " + game["awayTeam"]["name"]
