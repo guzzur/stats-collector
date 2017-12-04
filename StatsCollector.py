@@ -13,7 +13,7 @@ class StatsCollector:
 
     def get_dt_games(self, game_uid):
         if self.site_type.lower() == "sofa":
-            return get("https://www.sofascore.com/event/{}/json".format(game_uid)).json()
+            return get("https://www.sofascore.com/event/{0}/json".format(game_uid)).json()
 
     # Define the Sofa function
     def sofa_league(self):
