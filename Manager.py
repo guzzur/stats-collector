@@ -1,5 +1,7 @@
 from ConfigManager import ConfigManager
 from StatsCollector import StatsCollector
+import time
+import datetime
 
 if __name__ == "__main__":
     config = ConfigManager("Config.xml")
@@ -10,6 +12,7 @@ if __name__ == "__main__":
             url = holder[2]["url"]
             print url
             collector = StatsCollector(url, "sofa")
+
             league = collector.get_league()
 
             for team in league:
@@ -19,3 +22,10 @@ if __name__ == "__main__":
                       team["totalFields"]["drawTotal"] + "," + \
                       team["totalFields"]["lossTotal"] + "," + \
                       team["totalFields"]["pointsTotal"] + "]"
+
+            league_start_time = holder[2]["started"]
+            games = collector.get_games(league_start_time)
+
+            for game in games["weekMatches"]["tournaments"][0]["events"]:
+                if ("She" in game.awayTeam.name or "She" in game.homeTeam.name) and ("Aviv" in game.awayTeam.name or "Aviv" in game.homeTeam.name):
+                    print game.homeTeam.name + " : " + game.awayTeam.name

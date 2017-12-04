@@ -1,5 +1,6 @@
 from requests import get
-
+import time
+import datetime
 
 # Define the class
 class StatsCollector:
@@ -10,15 +11,30 @@ class StatsCollector:
         self.site_type = site_type
 
     # Define the Sofa function
-    def sofa_steal(self):
-        json_reader = get(self.abs_adr).json()
+    def sofa_league(self):
+        json_reader = get(self.abs_adr + "/json").json()
         # Pull all the data about the requested league
-        teams = json_reader["standingsTables"][0]["tableRows"]
-        test = get(r"https://www.sofascore.com/u-tournament/17/season/13380/matches/week/1511740800/1512345600?_=151241234").json()
+        league = json_reader["standingsTables"][0]["tableRows"]
 
-        return teams
+        return league
+
+    def sofa_games(self, unix_start, unix_end):
+        addr = self.abs_adr + "/matches/week/" + str(int(unix_start)) + "/" + str(int(unix_end))
+        print addr
+        json_reader = get(addr).json()
+        # Pull all the data about the requested league
+
+        return json_reader
 
     # Define the function that will interact with Felix
     def get_league(self):
         if self.site_type.lower() == "sofa":
-            return self.sofa_steal()
+            return self.sofa_league()
+
+    def get_games(self, start):
+        if self.site_type.lower() == "sofa":
+            datetime_object = datetime.datetime.strptime(start, '%Y-%m-%d')
+            unix_start = time.mktime((datetime.date(datetime_object.year, datetime_object.month, datetime_object.day)).timetuple())
+            unix_end = time.mktime((datetime.datetime.now()).timetuple())
+
+            return self.sofa_games(unix_start, unix_end)
