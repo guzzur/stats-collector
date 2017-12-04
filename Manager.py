@@ -1,7 +1,6 @@
 from ConfigManager import ConfigManager
 from StatsCollector import StatsCollector
-import time
-import datetime
+
 
 if __name__ == "__main__":
     config = ConfigManager("Config.xml")

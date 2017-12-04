@@ -2,6 +2,7 @@ from requests import get
 import time
 import datetime
 
+
 # Define the class
 class StatsCollector:
 
@@ -9,6 +10,10 @@ class StatsCollector:
     def __init__(self, url, site_type):
         self.abs_adr = url
         self.site_type = site_type
+
+    def get_dt_games(self, game_uid):
+        if self.site_type.lower() == "sofa":
+            return get("https://www.sofascore.com/event/{}/json".format(game_uid)).json()
 
     # Define the Sofa function
     def sofa_league(self):
