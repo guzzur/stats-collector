@@ -1,11 +1,11 @@
 <config>
     <football>
         <leagues>
-            <league url="https://www.sofascore.com/u-tournament/266/season/13491" started="2017-10-11"/> <!-- israel 1st -->
-            <league url="https://www.sofascore.com/u-tournament/17/season/13380" started="2017-10-11"/> <!-- england 1st -->
-            <league url="https://www.sofascore.com/u-tournament/8/season/13662" started="2017-10-11"/> <!-- spain 1st -->
-            <!--<league url="https://www.sofascore.com/u-tournament/23/season/13768" started="2017-10-11"/>--> <!-- italian 1st -->
-            <league url="https://www.sofascore.com/u-tournament/35/season/13477" started="2017-10-11"/> <!-- german 1st -->
+            <league url="https://www.sofascore.com/u-tournament/8/season/13662" started="2017-08-19"/> <!-- spain 1st -->
+            <league url="https://www.sofascore.com/u-tournament/266/season/13491" started="2017-08-19"/> <!-- israel 1st -->
+            <league url="https://www.sofascore.com/u-tournament/17/season/13380" started="2017-08-19"/> <!-- england 1st -->
+            <!--<league url="https://www.sofascore.com/u-tournament/23/season/13768" started="2017-08-19"/>--> <!-- italian 1st -->
+            <league url="https://www.sofascore.com/u-tournament/35/season/13477" started="2017-08-19"/> <!-- german 1st -->
             <!--<league url="https://www.sofascore.com/u-tournament/772/season/12916" started="2017-10-11"/>--> <!-- uzbek 1st -->
         </leagues>
     </football>

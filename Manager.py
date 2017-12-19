@@ -3,6 +3,7 @@ from StatsCollector import StatsCollector
 
 
 def print_league_table(league):
+    print "#) Team [G, W, D, L, P]"
     for team in league:
         print team["position"] + ". " + team["team"]["name"] + " [" + \
               team["totalFields"]["matchesTotal"] + "," + \
@@ -50,27 +51,39 @@ if __name__ == "__main__":
             games = collector.get_games(league_start_time)
 
             for game in games["weekMatches"]["tournaments"][0]["events"]:
-                print_game_result(game)
-
+                bBrokeLead = False
                 game_events = collector.get_dt_games(str(game["id"]))
 
                 home_goals = {}
                 away_goals = {}
 
+                home_team_name = u"".join(game["homeTeam"]["name"])
+                away_team_name = u"".join(game["awayTeam"]["name"])
+
+                prev_home_goals_count = -1
+                prev_away_goals_count = -1
+
+                curr_home_goals_count = -1
+                curr_away_goals_count = -1
+
                 for event in game_events["incidents"]:
                     if event["incidentType"] == "goal":
+                        curr_home_goals_count = event["homeScore"]
+                        curr_away_goals_count = event["awayScore"]
+
+                        team = "Sociedad"
+                        if event["homeScore"] == event["awayScore"] and (team in home_team_name or team in away_team_name):
+                            bBrokeLead = True
+                            if event["scoringTeam"] == 1:
+                                print "\t" + str(event["time"]) + "' (" + home_team_name + ") " + str(event["homeScore"]) + " : " + str(event["awayScore"])
+                            else:
+                                print "\t" + str(event["time"]) + "' (" + away_team_name + ") " + str(event["homeScore"]) + " : " + str(event["awayScore"])
+
                         if event["scoringTeam"] == 1:
                             home_goals[str(event["time"])] = str(event["incidentClass"])
                         else:
                             away_goals[str(event["time"])] = str(event["incidentClass"])
 
-                prev_home_goals_count = -1
-                prev_away_goals_count = -1
-
-                home_goals_count = 0
-                away_goals_count = 0
-
-                # while home_goals_count < len(home_goals) && away_goals_count < len(away_goals):
-                for i in range(minimum(len(home_goals), len(away_goals))):
-                    print home_goals[i]
-                    print away_goals[i]
+                if bBrokeLead:
+                    print_game_result(game)
+                    print ""
