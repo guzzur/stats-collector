@@ -2,6 +2,37 @@ from ConfigManager import ConfigManager
 from StatsCollector import StatsCollector
 
 
+def print_league_table(league):
+    for team in league:
+        print team["position"] + ". " + team["team"]["name"] + " [" + \
+              team["totalFields"]["matchesTotal"] + "," + \
+              team["totalFields"]["winTotal"] + "," + \
+              team["totalFields"]["drawTotal"] + "," + \
+              team["totalFields"]["lossTotal"] + "," + \
+              team["totalFields"]["pointsTotal"] + "]"
+
+
+def print_game_result(game):
+    print str(game["id"]) + " " + game["homeTeam"]["name"] + " " + \
+          str(game["homeScore"]["current"]) + " : " + \
+          str(game["awayScore"]["current"]) + " " + \
+          str(game["awayTeam"]["name"])
+
+
+def print_game_goals(game):
+    pass
+
+
+def team_breaked_lead(game, home_or_away):
+    pass
+
+
+def minimum(a, b):
+    if a < b:
+        return a
+    return b
+
+
 if __name__ == "__main__":
     config = ConfigManager("Config.xml")
     config.recursive_get_xml(config.root, 0)
@@ -13,20 +44,33 @@ if __name__ == "__main__":
             collector = StatsCollector(url, "sofa")
 
             league = collector.get_league()
-
-            for team in league:
-                print team["position"] + ". " + team["team"]["name"] + " [" + \
-                      team["totalFields"]["matchesTotal"] + "," + \
-                      team["totalFields"]["winTotal"] + "," + \
-                      team["totalFields"]["drawTotal"] + "," + \
-                      team["totalFields"]["lossTotal"] + "," + \
-                      team["totalFields"]["pointsTotal"] + "]"
+            print_league_table(league)
 
             league_start_time = holder[2]["started"]
             games = collector.get_games(league_start_time)
 
             for game in games["weekMatches"]["tournaments"][0]["events"]:
-                print str(game["id"]) + " " + game["homeTeam"]["name"] + " " + \
-                      str(game["homeScore"]["current"]) + " : " + \
-                      str(game["awayScore"]["current"]) + " " + \
-                      game["awayTeam"]["name"]
+                print_game_result(game)
+
+                game_events = collector.get_dt_games(str(game["id"]))
+
+                home_goals = {}
+                away_goals = {}
+
+                for event in game_events["incidents"]:
+                    if event["incidentType"] == "goal":
+                        if event["scoringTeam"] == 1:
+                            home_goals[str(event["time"])] = str(event["incidentClass"])
+                        else:
+                            away_goals[str(event["time"])] = str(event["incidentClass"])
+
+                prev_home_goals_count = -1
+                prev_away_goals_count = -1
+
+                home_goals_count = 0
+                away_goals_count = 0
+
+                # while home_goals_count < len(home_goals) && away_goals_count < len(away_goals):
+                for i in range(minimum(len(home_goals), len(away_goals))):
+                    print home_goals[i]
+                    print away_goals[i]
