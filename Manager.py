@@ -4,7 +4,7 @@ from beautifultable import BeautifulTable
 from unicodedata import normalize
 
 line_width = 80
-delimeter = "=" * line_width
+delimeter = "-" * line_width
 delimeter_minus = "-" * line_width
 
 
