@@ -1,18 +1,22 @@
 from ConfigManager import ConfigManager
 from StatsCollector import StatsCollector
-
+from beautifultable import BeautifulTable
+from unicodedata import normalize
 delimeter = "-------------------------------------"
 
 
 def print_league_table(league):
-    print "#) Team [G, W, D, L, P]"
-    for team in league:
-        print team["position"] + ". " + team["team"]["name"] + " [" + \
-              team["totalFields"]["matchesTotal"] + "," + \
-              team["totalFields"]["winTotal"] + "," + \
-              team["totalFields"]["drawTotal"] + "," + \
-              team["totalFields"]["lossTotal"] + "," + \
-              team["totalFields"]["pointsTotal"] + "]"
+    table = BeautifulTable()
+    table.column_headers = ["Pos.", "Team", "P", "W", "D", "L", "Goals", "GD", "P"]
+
+    for t in league:
+        tname = normalize("NFKD", t["team"]["name"]).encode("ascii", "ignore")
+        table.append_row([t["position"], tname, t["totalFields"]["matchesTotal"],
+                          t["totalFields"]["winTotal"], t["totalFields"]["drawTotal"],
+                          t["totalFields"]["lossTotal"],
+                          t["totalFields"]["goalsTotal"], t["totalFields"]["goalDiffTotal"],
+                          t["totalFields"]["pointsTotal"]])
+    print(table)
 
 
 def print_game_result(game):
