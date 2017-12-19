@@ -25,7 +25,6 @@ class StatsCollector:
 
     def sofa_games(self, unix_start, unix_end):
         addr = self.abs_adr + "/matches/week/" + str(int(unix_start)) + "/" + str(int(unix_end))
-        print addr
         json_reader = get(addr).json()
         # Pull all the data about the requested league
 
