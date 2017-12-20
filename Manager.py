@@ -23,7 +23,7 @@ def print_league_table(league):
 
 
 def print_game_result(game):
-    print str(game["id"]) + " " + game["homeTeam"]["name"] + " " + \
+    print str(game["formatedStartDate"]) + " " + game["homeTeam"]["name"] + " " + \
           str(game["homeScore"]["current"]) + " : " + \
           str(game["awayScore"]["current"]) + " " + \
           str(unicode_normalize(game["awayTeam"]["name"]))
@@ -54,7 +54,7 @@ def query_last_minutes_points(game, home_team_name, away_team_name):
     bLastMinutesPoints = False
     for event in game_events["incidents"]:
         if event["incidentType"] == "goal":
-            if event["homeScore"] == event["awayScore"] or abs(event["homeScore"] == event["awayScore"]):
+            if event["time"] >= 80 and abs(event["homeScore"] - event["awayScore"]) <= 1:
                 bLastMinutesPoints = True
                 if event["scoringTeam"] == 1:
                     team_name = home_team_name
@@ -78,6 +78,7 @@ def unicode_normalize(string):
 
 
 def print_heading(heading):
+    print ""
     print delimeter
     print heading
     print delimeter
@@ -100,25 +101,26 @@ if __name__ == "__main__":
             league_start_time = holder[2]["started"]
             games = collector.get_games(league_start_time)
 
-            team = "Real Sociedad"
-            print_heading("DETAILED DESCRIPTION: " + team.upper())
+            teams = ["Hapoel Be'er Sheva", "Maccabi Haifa"]
+            for team in teams:
+                print_heading("DETAILED DESCRIPTION: " + team.upper())
 
-            print_heading("LEAD BREAKS")
-            for game in games["weekMatches"]["tournaments"][0]["events"]:
-                game_events = collector.get_dt_games(str(game["id"]))
+                print_heading("LEAD BREAKS")
+                for game in games["weekMatches"]["tournaments"][0]["events"]:
+                    game_events = collector.get_dt_games(str(game["id"]))
 
-                home_team_name = unicode_normalize(game["homeTeam"]["name"])
-                away_team_name = unicode_normalize(game["awayTeam"]["name"])
+                    home_team_name = unicode_normalize(game["homeTeam"]["name"])
+                    away_team_name = unicode_normalize(game["awayTeam"]["name"])
 
-                if team.lower() in home_team_name.lower() or team.lower() in away_team_name.lower():
-                    query_team_broke_lead(game, home_team_name, away_team_name)
+                    if team.lower() in home_team_name.lower() or team.lower() in away_team_name.lower():
+                        query_team_broke_lead(game, home_team_name, away_team_name)
 
-            print_heading("LAST MINUTES POINTS")
-            for game in games["weekMatches"]["tournaments"][0]["events"]:
-                game_events = collector.get_dt_games(str(game["id"]))
+                print_heading("LAST MINUTES POINTS")
+                for game in games["weekMatches"]["tournaments"][0]["events"]:
+                    game_events = collector.get_dt_games(str(game["id"]))
 
-                home_team_name = unicode_normalize(game["homeTeam"]["name"])
-                away_team_name = unicode_normalize(game["awayTeam"]["name"])
+                    home_team_name = unicode_normalize(game["homeTeam"]["name"])
+                    away_team_name = unicode_normalize(game["awayTeam"]["name"])
 
-                if team.lower() in home_team_name.lower() or team.lower() in away_team_name.lower():
-                    query_last_minutes_points(game, home_team_name, away_team_name)
+                    if team.lower() in home_team_name.lower() or team.lower() in away_team_name.lower():
+                        query_last_minutes_points(game, home_team_name, away_team_name)
