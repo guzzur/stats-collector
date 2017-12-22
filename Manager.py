@@ -67,6 +67,23 @@ def query_last_minutes_points(game, home_team_name, away_team_name):
         print delimeter_minus
 
 
+def query_first_minutes_goals(game, home_team_name, away_team_name):
+    bFirstMinutesGoal = False
+    for event in game_events["incidents"]:
+        if event["incidentType"] == "goal":
+            if event["time"] <= 15:
+                bFirstMinutesGoal = True
+                if event["scoringTeam"] == 1:
+                    team_name = home_team_name
+                else:
+                    team_name = away_team_name
+                print "\t" + str(event["time"]) + "' (" + team_name + ") " + str(
+                    event["homeScore"]) + " : " + str(event["awayScore"])
+    if bFirstMinutesGoal:
+        print_game_result(game)
+        print delimeter_minus
+
+
 def minimum(a, b):
     if a < b:
         return a
@@ -95,13 +112,74 @@ if __name__ == "__main__":
 
             league = collector.get_league()
 
-            print_heading("LEAGUE TABLE")
+            print_heading("LEAGUE TABLE: " + (holder[2]["name"]).upper())
             print_league_table(league)
 
             league_start_time = holder[2]["started"]
             games = collector.get_games(league_start_time)
 
-            teams = ["Hapoel Be'er Sheva", "Maccabi Haifa"]
+            teams = []
+
+            """
+            "Hapoel Be'er Sheva",
+            "Hapoel Haifa",
+            "Beitar Jerusalem",
+            "Maccabi Tel Aviv",
+            "Maccabi Netanya",
+            "Bnei Yehuda Tel Aviv",
+            "Ironi Kiryat Shmona",
+            "Hapoel Bnei Sakhnin",
+            "Maccabi Haifa",
+            "Maccabi Petach Tikva",
+            "Hapoel Ashkelon",
+            "Hapoel Raanana",
+            "Ashdod SC",
+            "Hapoel Akko"
+            
+
+            "Manchester City",
+            "Manchester United",
+            "Chelsea",
+            "Liverpool",
+            "Arsenal",
+            "Burnley",
+            "Tottenham Hotspur",
+            "Leicester City",
+            "Everton",
+            "Watford",
+            "Huddersfield Town",
+            "Southampton",
+            "Brighton & Hove Albion",
+            "Crystal Palace",
+            "West Ham United",
+            "Bournemouth",
+            "Stoke City",
+            "Newcastle United",
+            "West Bromwich Albion",
+            "Swansea City"
+
+            "Barcelona",
+            "Atletico Madrid",
+            "Valencia",
+            "Real Madrid",
+            "Sevilla",
+            "Villarreal",
+            "Eibar",
+            "Getafe",
+            "Real Sociedad",
+            "Girona",
+            "Leganes",
+            "Real Betis",
+            "Celta Vigo",
+            "Athletic Bilbao",
+            "Levante",
+            "Espanyol",
+            "Deportivo Alaves",
+            "Deportivo La Coruna",
+            "Malaga",
+            "Las Palmas"
+            """
+
             for team in teams:
                 print_heading("DETAILED DESCRIPTION: " + team.upper())
 
@@ -124,3 +202,13 @@ if __name__ == "__main__":
 
                     if team.lower() in home_team_name.lower() or team.lower() in away_team_name.lower():
                         query_last_minutes_points(game, home_team_name, away_team_name)
+
+                print_heading("0-15 MINUTES GOALS")
+                for game in games["weekMatches"]["tournaments"][0]["events"]:
+                    game_events = collector.get_dt_games(str(game["id"]))
+
+                    home_team_name = unicode_normalize(game["homeTeam"]["name"])
+                    away_team_name = unicode_normalize(game["awayTeam"]["name"])
+
+                    if team.lower() in home_team_name.lower() or team.lower() in away_team_name.lower():
+                        query_first_minutes_goals(game, home_team_name, away_team_name)
