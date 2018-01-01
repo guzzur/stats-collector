@@ -11,9 +11,8 @@ class ImageCreator:
     def create_png_output(self):
         pass
 
-
-def create_html_output(html, args):
-    print Environment().from_string(html).render(logoleft=args["logo-left"], logoright=args["logo-right"])
+    def create_html_output(html, args):
+        print Environment().from_string(html).render(logoleft=args["logo-left"], logoright=args["logo-right"])
 
 
 if __name__ == "__main__":
@@ -23,12 +22,12 @@ if __name__ == "__main__":
     team_logo_left = ""
     team_logo_right = ""
 
-    params = {}
+    params = dict()
     params["logo-left"] = r"C:\GetBet\Images\England\280X280_0004_Arsenal.png"
     params["logo-right"] = r"C:\GetBet\Images\England\280X280_0011_Liverpool.png"
     params["param-0"] = {"param-value-left": "4", "param-value-left": "6", "param-name": "Broke lead", "param-type": "+"}
 
-    create_html_output(template_raw, params)
+    ic.create_html_output(template_raw, params)
     """
     TBD
     params["param-1"] = ["5", "5", "Scored at 0-15 min" "+"]

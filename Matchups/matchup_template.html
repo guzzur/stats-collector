@@ -1,11 +1,16 @@
 <html>
 	<head>
 		<style>
+			@font-face {
+				font-family: BebasNeue;
+				src: url(../Fonts/BebasNeue.otf);
+			}
 			body {
 			    background-color: white;
 			    margin: 0px;
 			    padding: 0px;
 			    color: white;
+			    font-family: BebasNeue;
 			}
 			h1 {
 			    color: maroon;
@@ -37,75 +42,40 @@
 		        overflow: auto;
 		        display: table-row;
 		    }
-		    .logo-left {
-		    	padding-left: 200px;
-		        width: 280px;
-		        float: left;
-		    }
 		    .vs {
 		        overflow: auto;
 		        padding-top: 100px;
 			    text-align: center;
-
-				font-family: Calibri;
 				font-size: 75px;
 				color: #fff;
 				text-shadow: 0 0 1px #000000, 0 0 15px #000000;
 		    }
-		    .logo-right {
-		    	padding-right: 200px;
-		        width: 280px;
-		        float: right;
-		    }
-		    .param-left-value {
-		    	padding-left: 50px;
-		        width: 70px;
-		        float: right;
-		        background-color: #f00;
-		    }
-		    .param-left-bar {
-		    	width: 50%;
-		    	background-color: #c00;
-		    }
-		    .param-bar-space {
-		    	width: 10px;
-		    }
-			.param-right-bar {
-				width: 50%;
-				background-color: #00c;
-			}
-		    .param-right-value {
-		    	padding-right: 50px;
-		        width: 70px;
-		        float: right;
-		        background-color: #00f;
-		    }
 		</style>
 	</head>
 	<body>
-		<div class="vs" style="position: absolute; left: 510px; top: 175px; font-size: 55px;">Param 1</div>
-		<div class="vs" style="position: absolute; left: 510px; top: 295px; font-size: 55px;">Param 2</div>
-		<div class="vs" style="position: absolute; left: 510px; top: 415px; font-size: 55px;">Param 3</div>
-		<div class="vs" style="position: absolute; left: 510px; top: 535px; font-size: 55px;">Param 4</div>
-		<div class="vs" style="position: absolute; left: 510px; top: 655px; font-size: 55px;">Param 5</div>
+		<div class="vs" style="position: absolute; width: 1200px; top: 190px; font-size: 40px;">Scored in first 15 min</div>
+		<div class="vs" style="position: absolute; width: 1200px; top: 310px; font-size: 40px;">Gained points in 80+ min</div>
+		<div class="vs" style="position: absolute; width: 1200px; top: 430px; font-size: 40px;">Lost lead</div>
+		<div class="vs" style="position: absolute; width: 1200px; top: 550px; font-size: 40px;">Conceded in first 15 min</div>
+		<div class="vs" style="position: absolute; width: 1200px; top: 670px; font-size: 40px;">Lost points in 80+ min</div>
 	    <div class="main-container">
 	    	<table style="width: 100%;">
 	    		<tr style="height: 20px;">
-	    			<td>top</td>
+	    			<td>&nbsp;</td>
 	    		</tr>
 	    		<tr style="height: 280px;">
 	    			<td>
 		    			<table style="width: 100%; height: 280px;">
 		    				<tr>
-		    					<td style="width: 570px;">
+		    					<td style="width: 585px; padding-left: 180px;">
 		    						<img src="../Images/England/280X280_0017_Manchester_United.png" class="logo-left-image">
 		    					</td>
-		    					<td style="width: 60px;">
+		    					<td style="width: 30px;">
 						            <div class="vs">
 						                VS
 						            </div>
 		    					</td>
-		    					<td style="width: 570px;">
+		    					<td style="width: 585px; padding-right: 180px;">
 		    						<img src="../Images/England/280X280_0009_Burnley_FC.png" class="logo-right-image">
 		    					</td>
 		    				</tr>
@@ -121,27 +91,27 @@
 		    						<table>
 		    							<tr>
 		    								<td>
-		    									<div style="border-radius: 15px; background-color: #f44; width: 80px; height: 80px; vertical-align: middle; text-align: center; font-size: 50px;">
+		    									<div style="border-radius: 15px; background-color: #f44; width: 70px; height: 70px; vertical-align: middle; text-align: center; font-size: 50px; line-height: 70px;">
 		    										1
 		    									</div>
 		    								</td>
 		    								<td>
-												<div style="background-color: #f44; width: 300px; height: 45px; vertical-align: middle; text-align: center;">
+												<div style="background-color: #f44; width: 300px; height: 35px; vertical-align: middle; text-align: center;">
 													&nbsp;
 												</div>
 		    								</td>
 		    								<td>
-												<div style="width: 32px; height: 45px; vertical-align: middle; text-align: center;">
+												<div style="width: 32px; height: 35px; vertical-align: middle; text-align: center;">
 													&nbsp;
 												</div>
 		    								</td>
 		    								<td>
-												<div style="background-color: #44c; width: 600px; height: 45px; vertical-align: middle; text-align: center;">
+												<div style="background-color: #44c; width: 600px; height: 35px; vertical-align: middle; text-align: center;">
 													&nbsp;
 												</div>
 		    								</td>
 		    								<td>
-		    									<div style="border-radius: 15px; background-color: #44c; width: 80px; height: 80px; vertical-align: middle; text-align: center; font-size: 50px;">
+		    									<div style="border-radius: 15px; background-color: #44c; width: 70px; height: 70px; vertical-align: middle; text-align: center; font-size: 50px;  line-height: 70px;">
 		    										2
 		    									</div>
 		    								</td>
@@ -156,27 +126,27 @@
 		    						<table>
 		    							<tr>
 		    								<td>
-		    									<div style="border-radius: 15px; background-color: #f44; width: 80px; height: 80px; vertical-align: middle; text-align: center; font-size: 50px;">
+		    									<div style="border-radius: 15px; background-color: #f44; width: 70px; height: 70px; vertical-align: middle; text-align: center; font-size: 50px; line-height: 70px;">
 		    										1
 		    									</div>
 		    								</td>
 		    								<td>
-												<div style="background-color: #f44; width: 300px; height: 45px; vertical-align: middle; text-align: center;">
+												<div style="background-color: #f44; width: 300px; height: 35px; vertical-align: middle; text-align: center;">
 													&nbsp;
 												</div>
 		    								</td>
 		    								<td>
-												<div style="width: 32px; height: 45px; vertical-align: middle; text-align: center;">
+												<div style="width: 32px; height: 35px; vertical-align: middle; text-align: center;">
 													&nbsp;
 												</div>
 		    								</td>
 		    								<td>
-												<div style="background-color: #44c; width: 600px; height: 45px; vertical-align: middle; text-align: center;">
+												<div style="background-color: #44c; width: 600px; height: 35px; vertical-align: middle; text-align: center;">
 													&nbsp;
 												</div>
 		    								</td>
 		    								<td>
-		    									<div style="border-radius: 15px; background-color: #44c; width: 80px; height: 80px; vertical-align: middle; text-align: center; font-size: 50px;">
+		    									<div style="border-radius: 15px; background-color: #44c; width: 70px; height: 70px; vertical-align: middle; text-align: center; font-size: 50px;  line-height: 70px;">
 		    										2
 		    									</div>
 		    								</td>
@@ -191,27 +161,27 @@
 		    						<table>
 		    							<tr>
 		    								<td>
-		    									<div style="border-radius: 15px; background-color: #f44; width: 80px; height: 80px; vertical-align: middle; text-align: center; font-size: 50px;">
+		    									<div style="border-radius: 15px; background-color: #f44; width: 70px; height: 70px; vertical-align: middle; text-align: center; font-size: 50px; line-height: 70px;">
 		    										1
 		    									</div>
 		    								</td>
 		    								<td>
-												<div style="background-color: #f44; width: 300px; height: 45px; vertical-align: middle; text-align: center;">
+												<div style="background-color: #f44; width: 300px; height: 35px; vertical-align: middle; text-align: center;">
 													&nbsp;
 												</div>
 		    								</td>
 		    								<td>
-												<div style="width: 32px; height: 45px; vertical-align: middle; text-align: center;">
+												<div style="width: 32px; height: 35px; vertical-align: middle; text-align: center;">
 													&nbsp;
 												</div>
 		    								</td>
 		    								<td>
-												<div style="background-color: #44c; width: 600px; height: 45px; vertical-align: middle; text-align: center;">
+												<div style="background-color: #44c; width: 600px; height: 35px; vertical-align: middle; text-align: center;">
 													&nbsp;
 												</div>
 		    								</td>
 		    								<td>
-		    									<div style="border-radius: 15px; background-color: #44c; width: 80px; height: 80px; vertical-align: middle; text-align: center; font-size: 50px;">
+		    									<div style="border-radius: 15px; background-color: #44c; width: 70px; height: 70px; vertical-align: middle; text-align: center; font-size: 50px;  line-height: 70px;">
 		    										2
 		    									</div>
 		    								</td>
@@ -226,27 +196,27 @@
 		    						<table>
 		    							<tr>
 		    								<td>
-		    									<div style="border-radius: 15px; background-color: #f44; width: 80px; height: 80px; vertical-align: middle; text-align: center; font-size: 50px;">
+		    									<div style="border-radius: 15px; background-color: #f44; width: 70px; height: 70px; vertical-align: middle; text-align: center; font-size: 50px; line-height: 70px;">
 		    										1
 		    									</div>
 		    								</td>
 		    								<td>
-												<div style="background-color: #f44; width: 300px; height: 45px; vertical-align: middle; text-align: center;">
+												<div style="background-color: #f44; width: 300px; height: 35px; vertical-align: middle; text-align: center;">
 													&nbsp;
 												</div>
 		    								</td>
 		    								<td>
-												<div style="width: 32px; height: 45px; vertical-align: middle; text-align: center;">
+												<div style="width: 32px; height: 35px; vertical-align: middle; text-align: center;">
 													&nbsp;
 												</div>
 		    								</td>
 		    								<td>
-												<div style="background-color: #44c; width: 600px; height: 45px; vertical-align: middle; text-align: center;">
+												<div style="background-color: #44c; width: 600px; height: 35px; vertical-align: middle; text-align: center;">
 													&nbsp;
 												</div>
 		    								</td>
 		    								<td>
-		    									<div style="border-radius: 15px; background-color: #44c; width: 80px; height: 80px; vertical-align: middle; text-align: center; font-size: 50px;">
+		    									<div style="border-radius: 15px; background-color: #44c; width: 70px; height: 70px; vertical-align: middle; text-align: center; font-size: 50px;  line-height: 70px;">
 		    										2
 		    									</div>
 		    								</td>
@@ -261,27 +231,27 @@
 		    						<table>
 		    							<tr>
 		    								<td>
-		    									<div style="border-radius: 15px; background-color: #f44; width: 80px; height: 80px; vertical-align: middle; text-align: center; font-size: 50px;">
+		    									<div style="border-radius: 15px; background-color: #f44; width: 70px; height: 70px; vertical-align: middle; text-align: center; font-size: 50px; line-height: 70px;">
 		    										1
 		    									</div>
 		    								</td>
 		    								<td>
-												<div style="background-color: #f44; width: 300px; height: 45px; vertical-align: middle; text-align: center;">
+												<div style="background-color: #f44; width: 300px; height: 35px; vertical-align: middle; text-align: center;">
 													&nbsp;
 												</div>
 		    								</td>
 		    								<td>
-												<div style="width: 32px; height: 45px; vertical-align: middle; text-align: center;">
+												<div style="width: 32px; height: 35px; vertical-align: middle; text-align: center;">
 													&nbsp;
 												</div>
 		    								</td>
 		    								<td>
-												<div style="background-color: #44c; width: 600px; height: 45px; vertical-align: middle; text-align: center;">
+												<div style="background-color: #44c; width: 600px; height: 35px; vertical-align: middle; text-align: center;">
 													&nbsp;
 												</div>
 		    								</td>
 		    								<td>
-		    									<div style="border-radius: 15px; background-color: #44c; width: 80px; height: 80px; vertical-align: middle; text-align: center; font-size: 50px;">
+		    									<div style="border-radius: 15px; background-color: #44c; width: 70px; height: 70px; vertical-align: middle; text-align: center; font-size: 50px;  line-height: 70px;">
 		    										2
 		    									</div>
 		    								</td>
