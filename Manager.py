@@ -2,6 +2,7 @@ from ConfigManager import ConfigManager
 from StatsCollector import StatsCollector
 from beautifultable import BeautifulTable
 from unicodedata import normalize
+import time
 
 line_width = 80
 delimeter = "-" * line_width
@@ -94,6 +95,10 @@ def unicode_normalize(string):
     return normalize("NFKD", string).encode("ascii", "ignore")
 
 
+def milliseconds():
+    return int(round(time.time() * 1000))
+
+
 def print_heading(heading):
     print ""
     print delimeter
@@ -105,22 +110,8 @@ if __name__ == "__main__":
     config = ConfigManager("Config.xml")
     config.recursive_get_xml(config.root, 0)
 
-    for holder in config.holder:
-        if holder[1] == "league":
-            url = holder[2]["url"]
-            collector = StatsCollector(url, "sofa")
-
-            league = collector.get_league()
-
-            print_heading("LEAGUE TABLE: " + (holder[2]["name"]).upper())
-            print_league_table(league)
-
-            league_start_time = holder[2]["started"]
-            games = collector.get_games(league_start_time)
-
-            teams = []
-
-            """
+    teams = [
+        [
             "Hapoel Be'er Sheva",
             "Hapoel Haifa",
             "Beitar Jerusalem",
@@ -135,8 +126,8 @@ if __name__ == "__main__":
             "Hapoel Raanana",
             "Ashdod SC",
             "Hapoel Akko"
-            
-
+        ],
+        [
             "Manchester City",
             "Manchester United",
             "Chelsea",
@@ -157,7 +148,8 @@ if __name__ == "__main__":
             "Newcastle United",
             "West Bromwich Albion",
             "Swansea City"
-
+        ],
+        [
             "Barcelona",
             "Atletico Madrid",
             "Valencia",
@@ -178,20 +170,40 @@ if __name__ == "__main__":
             "Deportivo La Coruna",
             "Malaga",
             "Las Palmas"
-            """
+        ]
+    ]
 
-            for team in teams:
+    league_index = 0
+
+    for holder in config.holder:
+        if holder[1] == "league":
+            url = holder[2]["url"]
+            collector = StatsCollector(url, "sofa")
+
+            league = collector.get_league()
+
+            print_heading("LEAGUE TABLE: " + (holder[2]["name"]).upper())
+            print_league_table(league)
+
+            league_start_time = holder[2]["started"]
+            games = collector.get_games(league_start_time)
+
+            for team in teams[league_index]:
                 print_heading("DETAILED DESCRIPTION: " + team.upper())
 
                 print_heading("LEAD BREAKS")
                 for game in games["weekMatches"]["tournaments"][0]["events"]:
+                    #millis = milliseconds()
                     game_events = collector.get_dt_games(str(game["id"]))
-
+                    #print "Game fetch time: " + str(milliseconds() - millis) + " ms"
                     home_team_name = unicode_normalize(game["homeTeam"]["name"])
                     away_team_name = unicode_normalize(game["awayTeam"]["name"])
 
                     if team.lower() in home_team_name.lower() or team.lower() in away_team_name.lower():
+                        #millis = milliseconds()
                         query_team_broke_lead(game, home_team_name, away_team_name)
+                        #print "Query run time: " + str(milliseconds() - millis) + " ms"
+                        pass
 
                 print_heading("LAST MINUTES POINTS")
                 for game in games["weekMatches"]["tournaments"][0]["events"]:
@@ -202,6 +214,7 @@ if __name__ == "__main__":
 
                     if team.lower() in home_team_name.lower() or team.lower() in away_team_name.lower():
                         query_last_minutes_points(game, home_team_name, away_team_name)
+                        pass
 
                 print_heading("0-15 MINUTES GOALS")
                 for game in games["weekMatches"]["tournaments"][0]["events"]:
@@ -212,3 +225,6 @@ if __name__ == "__main__":
 
                     if team.lower() in home_team_name.lower() or team.lower() in away_team_name.lower():
                         query_first_minutes_goals(game, home_team_name, away_team_name)
+                        pass
+
+            league_index += 1
