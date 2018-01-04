@@ -111,6 +111,55 @@ if __name__ == "__main__":
     config.recursive_get_xml(config.root, 0)
 
     teams = [
+                [
+                ]
+            ]
+
+    """
+        [
+            "Barcelona",
+            "Atletico Madrid",
+            "Valencia",
+            "Real Madrid",
+            "Sevilla",
+            "Villarreal",
+            "Eibar",
+            "Getafe",
+            "Real Sociedad",
+            "Girona",
+            "Leganes",
+            "Real Betis",
+            "Celta Vigo",
+            "Athletic Bilbao",
+            "Levante",
+            "Espanyol",
+            "Deportivo Alaves",
+            "Deportivo La Coruna",
+            "Malaga",
+            "Las Palmas"
+        ],
+        [
+            "Napoli",
+            "Juventus",
+            "Inter",
+            "Roma",
+            "Lazio",
+            "Sampdoria",
+            "Fiorentina",
+            "Udinese",
+            "Atalanta",
+            "Torino",
+            "Milan",
+            "Bologna",
+            "ChievoVerona",
+            "Sassuolo",
+            "Cagliari",
+            "Genoa",
+            "SPAL",
+            "Crotone",
+            "Hellas Verona",
+            "Benevento"
+        ],
         [
             "Hapoel Be'er Sheva",
             "Hapoel Haifa",
@@ -149,29 +198,7 @@ if __name__ == "__main__":
             "West Bromwich Albion",
             "Swansea City"
         ],
-        [
-            "Barcelona",
-            "Atletico Madrid",
-            "Valencia",
-            "Real Madrid",
-            "Sevilla",
-            "Villarreal",
-            "Eibar",
-            "Getafe",
-            "Real Sociedad",
-            "Girona",
-            "Leganes",
-            "Real Betis",
-            "Celta Vigo",
-            "Athletic Bilbao",
-            "Levante",
-            "Espanyol",
-            "Deportivo Alaves",
-            "Deportivo La Coruna",
-            "Malaga",
-            "Las Palmas"
-        ]
-    ]
+    """
 
     league_index = 0
 
@@ -193,16 +220,12 @@ if __name__ == "__main__":
 
                 print_heading("LEAD BREAKS")
                 for game in games["weekMatches"]["tournaments"][0]["events"]:
-                    #millis = milliseconds()
                     game_events = collector.get_dt_games(str(game["id"]))
-                    #print "Game fetch time: " + str(milliseconds() - millis) + " ms"
                     home_team_name = unicode_normalize(game["homeTeam"]["name"])
                     away_team_name = unicode_normalize(game["awayTeam"]["name"])
 
                     if team.lower() in home_team_name.lower() or team.lower() in away_team_name.lower():
-                        #millis = milliseconds()
                         query_team_broke_lead(game, home_team_name, away_team_name)
-                        #print "Query run time: " + str(milliseconds() - millis) + " ms"
                         pass
 
                 print_heading("LAST MINUTES POINTS")
