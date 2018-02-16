@@ -13,18 +13,22 @@ class StatsCollector:
 
     def get_dt_games(self, game_uid):
         if self.site_type.lower() == "sofa":
+            # print "https://www.sofascore.com/event/{0}/json".format(game_uid)
             return get("https://www.sofascore.com/event/{0}/json".format(game_uid)).json()
 
     # Define the Sofa function
     def sofa_league(self):
         json_reader = get(self.abs_adr + "/json").json()
-        # Pull all the data about the requested league
-        league = json_reader["standingsTables"][0]["tableRows"]
+        league = []
+        if len(json_reader["standingsTables"]) > 0:
+            # Pull all the data about the requested league
+            league = json_reader["standingsTables"][0]["tableRows"]
 
         return league
 
     def sofa_games(self, unix_start, unix_end):
         addr = self.abs_adr + "/matches/week/" + str(int(unix_start)) + "/" + str(int(unix_end))
+        print addr
         json_reader = get(addr).json()
         # Pull all the data about the requested league
 

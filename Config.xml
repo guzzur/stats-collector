@@ -1,10 +1,11 @@
 <config>
     <football>
         <leagues>
-            <league url="https://www.sofascore.com/u-tournament/8/season/13662" started="2017-08-01" name="spain la liga" />
+            <league url="https://www.sofascore.com/u-tournament/2286/season/" started="2017-08-01" name="israel league b south"/>
             <!--
-            <league url="https://www.sofascore.com/u-tournament/23/season/13768" started="2017-08-01" name="italy serie a"/>
             <league url="https://www.sofascore.com/u-tournament/17/season/13380" started="2017-08-01" name=" england premier league"/>
+            <league url="https://www.sofascore.com/u-tournament/8/season/13662" started="2017-08-01" name="spain la liga" />
+            <league url="https://www.sofascore.com/u-tournament/23/season/13768" started="2017-08-01" name="italy serie a"/>
             <league url="https://www.sofascore.com/u-tournament/266/season/13491" started="2017-08-01" name="israel ligat ha'al"/>
             <league url="https://www.sofascore.com/u-tournament/23/season/13768" started="2017-08-01" name="italian seria a"/>
             <league url="https://www.sofascore.com/u-tournament/35/season/13477" started="2017-08-01" name="german bundesliga"/>

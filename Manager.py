@@ -112,6 +112,7 @@ if __name__ == "__main__":
 
     teams = [
                 [
+                    "Maccabi Ironi Kiryat Malakhi"
                 ]
             ]
 
